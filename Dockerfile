@@ -1,4 +1,3 @@
 FROM ubuntu:trusty
-RUN apt -y update
-RUN apt -y install apache2
-RUN apt -y install php
+RUN apt install -y apache2
+RUN apt install -y php
