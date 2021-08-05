@@ -4,8 +4,6 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN add-apt-repository ppa:ondrej/php
-RUN apt-get update
 RUN apt-get install -y \
 	php8.0 \
 	php8.0-bz2 \
