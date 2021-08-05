@@ -1,8 +1,9 @@
 FROM ubuntu:trusty
-RUN apt-get -y && apt-get upgrade -y
-
-RUN apt-get install -y zip unzip
-RUN apt-get install -y \
+RUN apt-get update && apt-get install --no-install-recommends -y python \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+RUN apt-get install --no-install-recommends -y zip unzip
+RUN apt-get install --no-install-recommends -y \
 	php \
 	php-bz2 \
 	php-cgi \
@@ -36,8 +37,8 @@ RUN apt-get install -y \
 	php-xmlrpc \
 	php-xsl \
 	php-zip
-RUN apt-get install apache2 libapache2-mod-php -y
-RUN apt-get install mariadb-common mariadb-server mariadb-client -y
+RUN apt-get install --no-install-recommends apache2 libapache2-mod-php -y
+RUN apt-get install --no-install-recommends mariadb-common mariadb-server mariadb-client -y
 
 COPY info.php /var/www/html/
 COPY index.html /var/www/html/
