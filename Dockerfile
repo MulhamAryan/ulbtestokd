@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:21.04
 RUN apt-get update && apt-get install -y python \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
@@ -54,3 +54,4 @@ VOLUME /etc/apache2
 
 EXPOSE 80
 EXPOSE 3306
+CMD ["bash"]
