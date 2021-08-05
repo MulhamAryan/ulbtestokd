@@ -1,6 +1,5 @@
 FROM ubuntu:18.04
-RUN apt-get update
- && apt-get upgrade -y\
+RUN apt-get update \
  && apt-get install -y python \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
