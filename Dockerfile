@@ -1,7 +1,6 @@
-# syntax=docker/dockerfile:1
-FROM node:12-alpine
-RUN apk add --no-cache python g++ make
-WORKDIR /app
-COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]
+FROM ubuntu:20.4
+RUN apt-get update
+RUN apt-get install -y apache2
+RUN apt-get install -y apache2-utils
+RUN apt-get clean
+EXPOSE 80 CMD ["apache2ctl", "-D", "FOREGROUND"]
