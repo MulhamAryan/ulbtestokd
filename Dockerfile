@@ -2,7 +2,6 @@ FROM ubuntu:trusty
 RUN apt-get update && apt-get install --no-install-recommends -y python \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
-RUN apt-get install --no-install-recommends -y zip unzip
 RUN apt-get install --no-install-recommends -y \
 	php \
 	php-bz2 \
