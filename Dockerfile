@@ -9,4 +9,5 @@ RUN sed -s -i -e "s/80/${APACHE_LISTEN_PORT}/" /etc/apache2/ports.conf /etc/apac
 USER www-data
 EXPOSE ${APACHE_LISTEN_PORT}
 COPY index.html /var/www/html/
-EXPOSE 8080 CMD ["apache2ctl", "-D", "FOREGROUND"]
+EXPOSE 8080
+CMD apachectl -D FOREGROUND
